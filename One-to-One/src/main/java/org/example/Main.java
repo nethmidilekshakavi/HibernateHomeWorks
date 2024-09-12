@@ -1,9 +1,6 @@
 package org.example;
 
-import Entity.Employee;
-import Entity.Laptop;
-import Entity.Student;
-import Entity.Vehicle;
+import Entity.*;
 import config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -43,9 +40,33 @@ public class Main {
         session.save(employee);
         session.save(vehicle);*/
 
+        Girl girl = new Girl();
+        girl.setId(1);
+        girl.setName("Dileksha");
+        girl.setAddress("Panadura");
+
+        Girl girl1 = new Girl();
+        girl1.setId(2);
+        girl1.setName("Tharaka");
+        girl1.setAddress("Galle");
 
 
+        Bag bag = new Bag();
+        bag.setBid(1);
+        bag.setColour("Black");
+        bag.setGirl(girl);
 
+        Bag bag1 = new Bag();
+        bag1.setBid(2);
+        bag1.setColour("Blue");
+        bag1.setGirl(girl1);
+
+
+        session.save(girl);
+        session.save(girl1);
+
+        session.save(bag);
+        session.save(bag1);
 
 
         transaction.commit();
