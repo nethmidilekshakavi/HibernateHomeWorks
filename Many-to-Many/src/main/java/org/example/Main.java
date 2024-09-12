@@ -1,6 +1,8 @@
 package org.example;
 
+import Entity.Boy;
 import Entity.Course;
+import Entity.Phone;
 import Entity.Student;
 import config.FactoryConfiguration;
 import org.hibernate.Session;
@@ -16,7 +18,7 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
 
-        Student student = new Student();
+       /* Student student = new Student();
         student.setSid(1);
         student.setName("Nuwan");
         student.setAddress("Matara");
@@ -36,8 +38,28 @@ public class Main {
 
         session.save(student);
         session.save(course);
+*/
 
-        
+        Phone phone = new Phone();
+        phone.setPid(1);
+        phone.setBrand("Apple");
+
+        List<Phone>phones= new ArrayList<>();
+        phones.add(phone);
+
+        Boy boy = new Boy();
+        boy.setBid(2);
+        boy.setName("Malan");
+        boy.setAddress("Kalutara");
+
+        List<Boy>boys= new ArrayList<>();
+        boys.add(boy);
+
+        phone.setBoys(boys);
+        boy.setPhones(phones);
+
+        session.save(boy);
+        session.save(phone);
 
         transaction.commit();
         session.close();
