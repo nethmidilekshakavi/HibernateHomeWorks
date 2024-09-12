@@ -29,7 +29,7 @@ public class Main {
         session.save(laptop);
 */
 
-        Vehicle vehicle = new Vehicle();
+        /*Vehicle vehicle = new Vehicle();
         vehicle.setVid(1);
         vehicle.setName("Van");
 
@@ -41,7 +41,10 @@ public class Main {
         employee.setVehicle(vehicle);
 
         session.save(employee);
-        session.save(vehicle);
+        session.save(vehicle);*/
+
+
+
 
 
 
