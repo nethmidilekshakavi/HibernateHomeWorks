@@ -2,6 +2,7 @@ package Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class Course {
     private String name;
 
     @ManyToMany
+    @JoinColumn(referencedColumnName = "fk")
    private List<Student> students;
 
     public Course(int cid, String name, List<Student> students) {

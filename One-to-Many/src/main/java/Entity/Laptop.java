@@ -3,6 +3,7 @@ package Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -12,7 +13,9 @@ public class Laptop {
     private int id;
     private String lname;
 
+
     @ManyToOne
+    @JoinColumn(name = "jointable")
     private Student student;
 
 

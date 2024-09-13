@@ -13,6 +13,7 @@ public class Bag {
 
     private String colour;
 
+
     @ManyToOne
     private Boy boy;
 

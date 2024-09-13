@@ -16,7 +16,7 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
 
-        /*Laptop laptop = new Laptop();
+        Laptop laptop = new Laptop();
         laptop.setId(03);
         laptop.setLname("HP");
 
@@ -34,7 +34,7 @@ public class Main {
         laptop.setStudent(student);
 
         session.save(laptop);
-        session.save(student);*/
+        session.save(student);
 
 
        /* Vehicle vehicle = new Vehicle();
@@ -76,7 +76,7 @@ public class Main {
         session.close();
 */
 
-        Bag bag = new Bag();
+        /*Bag bag = new Bag();
         bag.setBid(2);
         bag.setColour("Red");
 
@@ -92,7 +92,7 @@ public class Main {
         bag.setBoy(boy);
 
         session.save(boy);
-        session.save(bag);
+        session.save(bag);*/
 
         transaction.commit();
         session.close();

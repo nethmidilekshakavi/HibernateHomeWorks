@@ -18,7 +18,7 @@ public class Main {
         Transaction transaction = session.beginTransaction();
 
 
-       /* Student student = new Student();
+        Student student = new Student();
         student.setSid(1);
         student.setName("Nuwan");
         student.setAddress("Matara");
@@ -38,9 +38,8 @@ public class Main {
 
         session.save(student);
         session.save(course);
-*/
 
-        Phone phone = new Phone();
+       /* Phone phone = new Phone();
         phone.setPid(1);
         phone.setBrand("Apple");
 
@@ -60,7 +59,7 @@ public class Main {
 
         session.save(boy);
         session.save(phone);
-
+*/
         transaction.commit();
         session.close();
 
