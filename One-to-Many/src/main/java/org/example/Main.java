@@ -17,7 +17,7 @@ public class Main {
 
 
         Laptop laptop = new Laptop();
-        laptop.setId(03);
+        laptop.setId(01);
         laptop.setLname("HP");
 
         List<Laptop> list = new ArrayList<>();
@@ -25,9 +25,9 @@ public class Main {
 
         Student student = new Student();
 
-        student.setNo(02);
-        student.setName("Nimala");
-        student.setMarks("60");
+        student.setNo(01);
+        student.setName("Pawani");
+        student.setMarks("80");
         student.setLaptop(list);
 
 
