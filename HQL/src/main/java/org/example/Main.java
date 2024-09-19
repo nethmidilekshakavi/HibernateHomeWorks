@@ -5,6 +5,7 @@ import Entity.Student;
 import config.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -41,36 +42,25 @@ public class Main {
        /* --------------------------------------------------------------------------------*/
 
         /*HQL does not have direct insert query*/
+/*
+        NativeQuery query = session.createNativeQuery("INSERT INTO Student (no, marks, name) VALUES (:1,:2,:3)");
+        query.setParameter("1", 5);
+        query.setParameter("2", 20);
+        query.setParameter("3", "dile");
+        query.executeUpdate();*/
 
-       /* Student student = new Student();
-        student.setNo(4);
-        student.setName("menaka");
-        student.setMarks("60");
 
-
-        Laptop laptop = new Laptop();
-        laptop.setId(2);
-        laptop.setLname("Mac");
-        laptop.setStudent(student);
-
-        List<Laptop>list=new ArrayList<>();
-        list.add(laptop);
-
-        student.setLaptop(list);
-
-        session.save(student);
-        session.save(laptop);
-*/
         /* --------------------------------------------------------------------------------*/
 
 
         /*update*/
-/*
-        Query query = session.createQuery("UPDATE Student SET name = :name WHERE no = :no");
+       /* Query query = session.createQuery("UPDATE Student SET name = :name WHERE no = :no");
         query.setParameter("name","sidevi");
         query.setParameter("no",1);
-        query.executeUpdate();
-*/
+        query.executeUpdate();*/
+
+
+
         /* --------------------------------------------------------------------------------*/
 //        delete
 
@@ -82,18 +72,9 @@ public class Main {
 
        /* search*/
 
-       /* Query query = session.createQuery("FROM Student WHERE no = :no", Student.class);
-        query.setParameter("no", 3);
-        List<Student> students = query.list();
+        /*select one column*/
 
-        for (Student student : students){
-            System.out.println("no: "+student.getNo()+"name: "+student.getName()+"marks: "+student.getMarks());
-        }*/
-
-        /* --------------------------------------------------------------------------------*/
-
-
-        /*Query query = session.createQuery("SELECT s.no, s.name FROM Student s WHERE s.no = :no");
+      /*  Query query = session.createQuery("SELECT s.no, s.name FROM Student s WHERE s.no = :no");
         query.setParameter("no", 1);
         List<Object[]> results = query.list();
 
@@ -104,7 +85,7 @@ public class Main {
             System.out.println("Student no: " + id + ", Name: " + name);
         }*/
 
-        /* --------------------------------------------------------------------------------*/
+        /* -----------------------select all column---------------------------------------------------------*/
 
        /* Query query = session.createQuery("select s.no ,s.name, s.marks from Student s");
         List<Object[]> results = query.list();
