@@ -21,23 +21,23 @@ public class Main {
         List<Student> studentslist = query.list();
         for (Student student : studentslist){
             System.out.println(student.getNo());
-        }*/
+        }
 
 
 
-       /* Query query =  session.createQuery("from Student where no = 1");
+        Query query =  session.createQuery("from Student where no = 1");
         List<Student> studentslist = query.list();
         for (Student student : studentslist){
             System.out.println(student.getNo());
-        }*/
+        }
 
-      /*  Query query1 =  session.createQuery("from Student where no = (?,?)");
+        Query query1 =  session.createQuery("from Student where no = (?,?)");
         query1.setParameter(1,2);
         List<Student> studentslist2 = query1.list();
         for (Student student : studentslist2){
             System.out.println(student.getName());
-        }*/
-
+        }
+*/
        /* --------------------------------------------------------------------------------*/
 
         /*HQL does not have direct insert query*/

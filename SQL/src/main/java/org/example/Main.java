@@ -23,40 +23,45 @@ public class Main {
         }*/
 
        /* insert--------------------------------------------------------------------------------------*/
-        NativeQuery query = session.createNativeQuery("INSERT INTO Student (no, marks, name) VALUES (:no, :marks, :name)");
-        query.setParameter("no", 3);
-        query.setParameter("marks", 20);
-        query.setParameter("name", "kavi");
-        query.executeUpdate();
+       /* NativeQuery query = session.createNativeQuery("INSERT INTO Student (no, marks, name) VALUES (?1, ?2,?3)");
+        query.setParameter(1, 5);
+        query.setParameter(2, 20);
+        query.setParameter(3, "dile");
+        query.executeUpdate();*/
+
 
         /*update-----------------------------------------------------------------------------------*/
-        /* NativeQuery query = session.createNativeQuery("UPDATE Student SET name = 'dileksha' WHERE no = :no");
-         query.setParameter("no", 1);*/
+        /* NativeQuery query = session.createNativeQuery("UPDATE Student SET name = ?1 WHERE no = ?2");
+         query.setParameter(1, "pawan");
+         query.setParameter(2,5);
+         query.executeUpdate();*/
 
 
-       /* delete-----------------------------------------------------------------------------------*/
-         /*NativeQuery query = session.createNativeQuery("DELETE FROM Student WHERE no = :no");
-         query.setParameter("no", 3);*/
+
+        /* delete-----------------------------------------------------------------------------------*/
+         /*NativeQuery query = session.createNativeQuery("DELETE FROM Student WHERE no = ?1");
+         query.setParameter(1, 5);
+         query.executeUpdate();*/
+
 
         /* search-----------------------------------------------------------------------------------*/
-        /* NativeQuery query = session.createNativeQuery("SELECT * FROM Student WHERE name = :name", Student.class);
-         query.setParameter("name", "dileksha");
+        /* NativeQuery query = session.createNativeQuery("SELECT * FROM Student WHERE name = ?1", Student.class);
+         query.setParameter(1, "Nimala");
          List<Student> list = query.getResultList();
          for (Student student : list) {
             System.out.println(student.getNo() + " " + student.getName() + " " + student.getMarks());
          }*/
 
+
+
         /*joinQuery-----------------------------------------------------------------------------------------*/
        /* Query query = session.createQuery("SELECT s.no, s.name , s.marks FROM Student s INNER JOIN Laptop l ON s.no = l.id");
         List<Object[]> results = query.list();
         for (Object[] result : results) {
-            Integer studentNo = (Integer) result[0];
-            String studentName = (String) result[1];
-            Integer studentMarks = (Integer) result[2];
-            System.out.println(studentNo + " " + studentName + " " + studentMarks);
-        }
-*/
-
+            Integer lapid = (Integer) result[0];
+            String lapname = (String) result[1];
+            System.out.println(lapid + " " + lapname );
+        }*/
 
 
         transaction.commit();
