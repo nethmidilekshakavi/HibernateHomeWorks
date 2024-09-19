@@ -23,11 +23,11 @@ public class Main {
         }*/
 
        /* insert--------------------------------------------------------------------------------------*/
-       /* NativeQuery query = session.createNativeQuery("INSERT INTO Student (no, marks, name) VALUES (:no, :marks, :name)");
+        NativeQuery query = session.createNativeQuery("INSERT INTO Student (no, marks, name) VALUES (:no, :marks, :name)");
         query.setParameter("no", 3);
         query.setParameter("marks", 20);
         query.setParameter("name", "kavi");
-        query.executeUpdate();*/
+        query.executeUpdate();
 
         /*update-----------------------------------------------------------------------------------*/
         /* NativeQuery query = session.createNativeQuery("UPDATE Student SET name = 'dileksha' WHERE no = :no");
@@ -47,7 +47,7 @@ public class Main {
          }*/
 
         /*joinQuery-----------------------------------------------------------------------------------------*/
-        Query query = session.createQuery("SELECT s.no, s.name , s.marks FROM Student s INNER JOIN Laptop l ON s.no = l.id");
+       /* Query query = session.createQuery("SELECT s.no, s.name , s.marks FROM Student s INNER JOIN Laptop l ON s.no = l.id");
         List<Object[]> results = query.list();
         for (Object[] result : results) {
             Integer studentNo = (Integer) result[0];
@@ -55,6 +55,7 @@ public class Main {
             Integer studentMarks = (Integer) result[2];
             System.out.println(studentNo + " " + studentName + " " + studentMarks);
         }
+*/
 
 
 

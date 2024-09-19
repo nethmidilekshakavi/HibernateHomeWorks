@@ -1,5 +1,6 @@
 package org.example;
 
+import Entity.Laptop;
 import Entity.Student;
 import config.FactoryConfiguration;
 import org.hibernate.Session;
@@ -37,17 +38,99 @@ public class Main {
             System.out.println(student.getName());
         }*/
 
+       /* --------------------------------------------------------------------------------*/
 
-        Query query = session.createQuery("UPDATE Student s SET s.name = :newname WHERE id = ?");
-        query.setParameter("newname",1);
+        /*HQL does not have direct insert query*/
+
+       /* Student student = new Student();
+        student.setNo(4);
+        student.setName("menaka");
+        student.setMarks("60");
 
 
-        query.setParameter("newname", "kavindi");
+        Laptop laptop = new Laptop();
+        laptop.setId(2);
+        laptop.setLname("Mac");
+        laptop.setStudent(student);
+
+        List<Laptop>list=new ArrayList<>();
+        list.add(laptop);
+
+        student.setLaptop(list);
+
+        session.save(student);
+        session.save(laptop);
+*/
+        /* --------------------------------------------------------------------------------*/
+
+
+        /*update*/
+/*
+        Query query = session.createQuery("UPDATE Student SET name = :name WHERE no = :no");
+        query.setParameter("name","sidevi");
+        query.setParameter("no",1);
+        query.executeUpdate();
+*/
+        /* --------------------------------------------------------------------------------*/
+//        delete
+
+          /*  Query query = session.createQuery("DELETE FROM Student where no =:no");
+            query.setParameter("no",3);
+            query.executeUpdate();*/
+
+        /* --------------------------------------------------------------------------------*/
+
+       /* search*/
+
+       /* Query query = session.createQuery("FROM Student WHERE no = :no", Student.class);
+        query.setParameter("no", 3);
+        List<Student> students = query.list();
+
+        for (Student student : students){
+            System.out.println("no: "+student.getNo()+"name: "+student.getName()+"marks: "+student.getMarks());
+        }*/
+
+        /* --------------------------------------------------------------------------------*/
+
+
+        /*Query query = session.createQuery("SELECT s.no, s.name FROM Student s WHERE s.no = :no");
+        query.setParameter("no", 1);
+        List<Object[]> results = query.list();
+
+        for (Object[] result : results) {
+            Integer id = (Integer) result[0];
+            String name = (String) result[1];
+
+            System.out.println("Student no: " + id + ", Name: " + name);
+        }*/
+
+        /* --------------------------------------------------------------------------------*/
+
+       /* Query query = session.createQuery("select s.no ,s.name, s.marks from Student s");
+        List<Object[]> results = query.list();
+
+        for (Object[] result : results) {
+            Integer id = (Integer) result[0];
+            String name = (String) result[1];
+            String marks = (String) result[2];
+
+            System.out.println("Student no: " + id + ", Name: " + name +"marks: " +marks);
+
+
+        }*/
+
+        /* --------------------------------------------------------------------------------*/
+
+
+        /* join*/
+       /* Query query = session.createQuery("SELECT l.id, l.lname FROM Laptop l INNER JOIN l.student s WHERE s.no = :id");
         query.setParameter("id", 1);
-
-        int result = query.executeUpdate();
-
-        System.out.println(result);
+        List<Object[]> results = query.list();
+        for (Object[] result : results) {
+            Integer lapid = (Integer) result[0];
+            String lapname = (String) result[1];
+            System.out.println(lapid + " " + lapname );
+        }*/
 
         transaction.commit();
         session.close();
